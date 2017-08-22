@@ -7,14 +7,26 @@
 */
 -->
 <?php
-
-require 'Model/model.php';
+require 'Controller/controller.php';
 
 try {
-$articles = getArticles();
-require 'View/viewHome.php';
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'article') {
+            if (isset($_GET['id'])) {
+                $id_art = intval($_GET['id']);
+                if ($id_art != 0) {
+                    article($id_art);
+                } else
+                    throw new Exception("Identifiant de d'article non valide");
+            } else
+                throw new Exception("Identifiant de d'article non défini");
+        } else
+            throw new Exception("Action non valide");
+    } else {
+        home();  // action par défaut
+    }
 }
+
 catch (Exception $e) {
-    $msgError = $e->getMessage();
-    require 'View/viewError.php';
+    erreur($e->getMessage());
 }

@@ -12,7 +12,7 @@
 <?php foreach ($articles as $article): ?>
     <article>
         <header>
-            <a href="<?= "Controller/article.php?id=" . $article['id_art'] ?>">
+            <a href="<?= "/../index.php?action=article&id=" . $article['id_art'] ?>">
             <h1 class="titreArticle"><?= $article['titre_art'] ?></h1>
             </a>
             <time><?= $article['date_art'] ?></time>
