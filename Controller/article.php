@@ -7,8 +7,8 @@ try {
         $id = intval($_GET['id']);
         if ($id != 0) {
             $article = getArticle($id);
-            $commentaire = getCommentaire($id);
-            require 'View/vueArticle.php';
+            $commentaires = getCommentaire($id);
+            require '../View/vueArticle.php';
         }
         else
             throw new Exception("Identifiant d'article inconnu");

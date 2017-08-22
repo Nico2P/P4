@@ -15,7 +15,7 @@ $titre = "Jean Forteroche -" . $article['titre']; ?>
         <h1 class="titreArticle"><?= $article['titre']?></h1>
         <time><?= $article['date'] ?></time>
     </header>
-    <p><? $article['contenu'] ?></p>
+    <p><?= $article['contenu'] ?></p>
 </article>
 <hr />
 <header>
