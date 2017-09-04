@@ -26,4 +26,12 @@ class controllerArticle {
         $vue = new Vue("Article");
         $vue->generer(array("article" => $article, "commentaire" => $commentaire));
     }
+
+    //ajoute un commentaire à l'article
+    public function commenter($auteur, $contenu, $id_art) {
+        // sauvegarde le commentaire
+        $this->commentaire->ajouterCommentaire($auteur, $contenu, $id_art);
+        //actualisation de la page
+        $this->article($id_art);
+    }
 }

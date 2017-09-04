@@ -24,14 +24,18 @@ class Routeur {
         try {
             if (isset($_GET['action'])) {
                 if ($_GET['action'] == 'article') {
-                    if (isset($_GET['id'])) {
-                        $id_art = intval($_GET['id']);
+                    $id_art = intval($this->getParametre($_GET, 'id'));
                         if ($id_art != 0) {
                             $this->ctrlArticle->article($id_art);
-                        } else
+                        }
+                        else
                             throw new Exception("Identifiant de d'article non valide");
-                    } else
-                        throw new Exception("Identifiant de d'article non défini");
+                    }
+                    else if ($_GET['action'] == 'commenter') {
+                        $auteur = $this->getParametre($_POST, 'auteur');
+                        $contenu = $this->getParametre($_POST, 'contenu');
+                        $id_art = $this->getParametre($_POST, 'id');
+                        $this->ctrlArticle->commenter($auteur, $contenu, $id_art);
                 } else
                     throw new Exception("Action non valide");
             } else {
@@ -43,6 +47,14 @@ class Routeur {
             $this->erreur($e->getMessage());
         }
 
+    }
+
+    private function getParametre($tableau, $nom) {
+        if (isset($tableau[$nom])) {
+            return $tableau[$nom];
+        }
+        else
+            throw new Exception("Paramètre '$nom' non defini");
     }
 
     private function erreur($msgErreur) {
