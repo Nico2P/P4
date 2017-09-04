@@ -6,10 +6,11 @@
  * Time: 14:30
  */
 -->
-<?php $titre = "Accueil"; ?>
+<?php $this->titre = "Accueil"; ?>
 
-<?php ob_start(); ?>
-<?php foreach ($articles as $article): ?>
+
+<?php foreach ($articles as $article):
+    ?>
     <article>
         <header>
             <a href="<?= "/../index.php?action=article&id=" . $article['id_art'] ?>">
@@ -21,5 +22,3 @@
     </article>
     <hr/>
 <?php endforeach; ?>
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'template.php'; ?>

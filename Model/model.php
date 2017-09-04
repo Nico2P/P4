@@ -9,35 +9,30 @@
 
 // TOUTES LES FONCTIONS CRUD ICI ?
 
-// Connection Bdd
-function getBdd() {
-    $bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'blog_user', 'Forteroche', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    return $bdd;
-}
+abstract class model {
 
-// Retourne les articles
-function getArticles() {
-    $bdd = getBdd();
-    $articles = $bdd->query('select * from articles order by id_art ASC');
-    return $articles;
-}
+    //PDO accès BD
+    private $bdd;
 
-// Retourne un article en fonction de l'id
-function getArticle($id_art) {
-    $bdd = getBdd();
-    $article = $bdd->prepare('select id_art as id, date_art as date, titre_art as titre, contenu_art as contenu from articles WHERE id_art=?');
-    $article->execute(array($id_art));
-    if ($article->rowCount() == 1)
-        return $article->fetch();
-    else
-        throw new Exception("Aucun article ne correspond à l'indentifiant '$id_art'");
-}
+    // Exécute une requete SQL
+    protected function executerRequete($sql, $params = null) {
+        if ($params == null) {
+            $resultat = $this->getBdd()->query($sql); // Direct
+        }
+        else {
+            $resultat = $this->getBdd()->prepare($sql); // Préparée
+            $resultat->execute($params);
+        }
+        return $resultat;
+    }
 
+    // Connection Bdd
+    private function getBdd() {
+        if ($this->bdd == null) {
+            $this->bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'blog_user', 'Forteroche', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-//Retourne les commentaires relatif à l'article choisi
-function getCommentaire($id_art) {
-    $bdd = getBdd();
-    $commentaires = $bdd->prepare('select id_com as id, date_com as date, auteur_com as auteur, contenu_com as contenu from commentaires where id_article=?');
-    $commentaires->execute(array($id_art));
-    return $commentaires;
+        }
+        return $this->bdd;
+    }
+
 }

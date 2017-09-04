@@ -7,9 +7,8 @@
  * Time: 15:23
  */
 
-$titre = "Jean Forteroche -" . $article['titre']; ?>
+$this->titre = "Jean Forteroche -" . $article['titre']; ?>
 
-<?php ob_start(); ?>
 <article>
     <header>
         <h1 class="titreArticle"><?= $article['titre']?></h1>
@@ -21,11 +20,9 @@ $titre = "Jean Forteroche -" . $article['titre']; ?>
 <header>
     <h1 id="commentaireArticle"> Commentaires sur le chapitre : <?= $article['titre'] ?></h1>
 </header>
-<?php foreach ($commentaires as $commentaire) : ?>
-    <p><?= $commentaire['auteur'] ?> :</p>
-    <p><?= $commentaire['contenu'] ?></p>
+<?php foreach ($commentaire as $commentaires) : ?>
+    <p><?= $commentaires['auteur'] ?></p>
+    <p><?= $commentaires['contenu'] ?></p>
 <?php endforeach; ?>
-<?php $contenu = ob_get_clean(); ?>
 
 
-<?php require 'template.php'; ?>

@@ -7,26 +7,12 @@
 */
 -->
 <?php
-require 'Controller/controller.php';
 
-try {
-    if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'article') {
-            if (isset($_GET['id'])) {
-                $id_art = intval($_GET['id']);
-                if ($id_art != 0) {
-                    article($id_art);
-                } else
-                    throw new Exception("Identifiant de d'article non valide");
-            } else
-                throw new Exception("Identifiant de d'article non défini");
-        } else
-            throw new Exception("Action non valide");
-    } else {
-        home();  // action par défaut
-    }
-}
+require 'Controller/Routeur.php';
 
-catch (Exception $e) {
-    erreur($e->getMessage());
-}
+/**define("APP_ROOT", __DIR__);
+echo APP_ROOT; die;*/
+
+
+$routeur = new Routeur();
+$routeur->routerRequete();
