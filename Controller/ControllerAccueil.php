@@ -6,10 +6,10 @@
  * Time: 16:35
  */
 
-require_once 'Model/article.php';
+require_once 'Model/Article.php';
 require_once 'View/Vue.php';
 
-class controllerAccueil {
+class ControllerAccueil {
 
     private $articles;
 

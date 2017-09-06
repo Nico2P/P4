@@ -6,8 +6,8 @@
  * Time: 17:38
  */
 
-require_once 'controllerAccueil.php';
-require_once 'controllerArticle.php';
+require_once 'ControllerAccueil.php';
+require_once 'ControllerArticle.php';
 require_once 'View/Vue.php';
 
 class Routeur {

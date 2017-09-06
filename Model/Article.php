@@ -6,9 +6,9 @@
  * Time: 15:16
  */
 
-require_once 'model.php';
+require_once 'Model.php';
 
-class article extends model {
+class Article extends Model {
 
     // Retourne les articles
     public function getArticles() {

@@ -6,9 +6,9 @@
  * Time: 15:40
  */
 
-require_once 'model.php';
+require_once 'Model.php';
 
-class commentaire extends model {
+class Commentaire extends Model {
 
     //Retourne les commentaires relatif à l'article choisi
     public function getCommentaire($id_art) {
