@@ -6,10 +6,11 @@
  * Time: 16:35
  */
 
-require_once 'Model/Article.php';
-require_once 'View/Vue.php';
+require_once 'Framework/Controleur';
+require_once 'Model/index.php';
 
-class ControllerAccueil {
+
+class ControlerAccueil  extends Controleur {
 
     private $articles;
 
@@ -18,9 +19,8 @@ class ControllerAccueil {
     }
 
     // Affiche la listes des billets
-    public function home() {
+    public function index() {
         $articles = $this->articles->getArticles();
-        $vue = new Vue("Home");
-        $vue->generer(array('articles' => $articles));
+        $this->genererVue(array('articles' => $articles));
     }
 }

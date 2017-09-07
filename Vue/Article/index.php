@@ -25,7 +25,7 @@ $this->titre = "Jean Forteroche -" . $article['titre']; ?>
     <p><?= $commentaires['contenu'] ?></p>
 <?php endforeach; ?>
 
-<form method="post" action="../index.php?action=commenter">
+<form method="post" action="../../index.php?action=commenter">
     <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" required/><br/>
     <textarea id="txtCommentaire" name="contenu" rows="4" placeholder="Votre commentaire" required></textarea><br/>
     <input type="hidden" name="id" value="<?=$article['id'] ?>" />

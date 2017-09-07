@@ -6,6 +6,8 @@
  * Time: 16:06
  */
 
+require_once 'Configuration.php';
+
 class Vue {
 
     //Fichier associé a la vue
@@ -13,17 +15,23 @@ class Vue {
     // Titre de la vue
     private $titre;
 
-    public function __construct($action){
+    public function __construct($action, $controleur = "") {
        // Détermine le nom du fichier vue à partir de l'action
-        $this->fichier = "View/vue" . $action . ".php";
+        $fichier = "Vue/";
+        if ($controleur != "") {
+            $fichier = $fichier . $controleur . "/";
+        }
+        $this->fichier = $fichier . $action . ".php";
     }
 
     // génere et affiche la vue
     public function generer($donnees) {
         //Partie spécifique de la vue
         $contenu = $this->genererFichier($this->fichier, $donnees);
+        // On definit une variable local accessible par la vue pour la racine web
+        $racineWeb = Configuration::get("racineWeb", "/");
         //Génération gabarit
-        $vue = $this->genererFichier("View/template.php", array("titre" => $this->titre, "contenu" => $contenu));
+        $vue = $this->genererFichier("Vue/template.php", array("titre" => $this->titre, "contenu" => $contenu, "racineWeb" => $racineWeb));
         // Renvoi au navigateur
         echo $vue;
     }

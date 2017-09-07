@@ -6,7 +6,7 @@
  * Time: 15:16
  */
 
-require_once 'Model.php';
+require_once 'Framework/Model.php';
 
 class Article extends Model {
 

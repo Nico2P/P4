@@ -12,6 +12,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
+    <base href="<?= $racineWeb ?>" >
     <link rel="stylesheet" href="../public/stylesheet.css">
     <title><?= $titre ?></title>
 </head>

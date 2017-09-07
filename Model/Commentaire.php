@@ -6,7 +6,7 @@
  * Time: 15:40
  */
 
-require_once 'Model.php';
+require_once 'Framework/Model.php';
 
 class Commentaire extends Model {
 

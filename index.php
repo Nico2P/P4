@@ -8,7 +8,7 @@
 -->
 <?php
 
-require 'Controller/Routeur.php';
+require 'Framework/Routeur.php';
 
 /**define("APP_ROOT", __DIR__);
 echo APP_ROOT; die;*/
