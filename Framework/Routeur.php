@@ -6,6 +6,7 @@
  * Time: 17:38
  */
 
+require_once 'Controleur.php';
 require_once 'Requete.php';
 require_once 'Vue.php';
 
@@ -17,7 +18,6 @@ class Routeur {
             $requete = new Requete(array_merge($_GET, $_POST));
             $controleur = $this->creerControleur($requete);
             $action = $this->creerAction($requete);
-
             $controleur->executerAction($action);
         }
         catch (Exception $e) {

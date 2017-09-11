@@ -9,16 +9,15 @@
 <?php $this->titre = "Accueil"; ?>
 
 
-<?php foreach ($articles as $article):
-    ?>
+<?php foreach ($articles as $article):?>
     <article>
         <header>
-            <a href="<?= "/../index.php?action=article&id=" . $article['id_art'] ?>">
-            <h1 class="titreArticle"><?= $article['titre_art'] ?></h1>
+            <a href="<?= "article/index/" . $this->nettoyer($article['id_art']) ?>">
+            <h1 class="titreArticle"><?= $this->nettoyer($article['titre_art']) ?></h1>
             </a>
-            <time><?= $article['date_art'] ?></time>
+            <time><?= $this->nettoyer($article['date_art']) ?></time>
         </header>
-        <p><?= $article['contenu_art'] ?></p>
+        <p><?= $this->nettoyer($article['contenu_art']) ?></p>
     </article>
     <hr/>
 <?php endforeach; ?>

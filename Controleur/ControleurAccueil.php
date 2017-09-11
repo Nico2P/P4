@@ -6,11 +6,11 @@
  * Time: 16:35
  */
 
-require_once 'Framework/Controleur';
-require_once 'Model/index.php';
+require_once 'Framework/Controleur.php';
+require_once 'Model/Article.php';
 
 
-class ControlerAccueil  extends Controleur {
+class ControleurAccueil  extends Controleur {
 
     private $articles;
 

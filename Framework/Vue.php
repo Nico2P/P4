@@ -52,4 +52,9 @@ class Vue {
             throw new Exception("Fichier '$fichier' introuvable");
         }
     }
+
+    //Secu
+    private function nettoyer($valeur) {
+        return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
+    }
 }

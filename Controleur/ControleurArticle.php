@@ -6,18 +6,19 @@
  * Time: 16:43
  */
 
-require_once 'Model/index.php';
+require_once 'Framework/Controleur.php';
+require_once 'Model/Article.php';
 require_once 'Model/Commentaire.php';
-require_once 'Framework/Vue.php';
 
-class ControlerArticle {
+
+class ControleurArticle  extends Controleur {
 
     private $article;
     private $commentaire;
 
     public function __construct(){
-        $this->article = new article();
-        $this->commentaire = new commentaire();
+        $this->article = new Article();
+        $this->commentaire = new Commentaire();
     }
 
     public function index() {

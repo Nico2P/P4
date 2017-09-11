@@ -30,7 +30,7 @@ abstract class Controleur
         }
         else {
             $classeControleur = get_class($this);
-            throw new Exception("Action '$action' non définie dans la classe $classeControleur");
+            throw new Exception("Action '$action' non définie dans la classe '$classeControleur'");
         }
     }
 
@@ -40,12 +40,14 @@ abstract class Controleur
     public abstract function index();
 
     // Génère la vue associée au contrôleur courant
-    protected function genererVue($donneesVue = array()) {
-        // Dertermine le nom du fichier vue a partir du controleur
+    protected function genererVue($donneesVue = array(), $action = null) {
+
+        // Utilisation du nom du controleur actuel
         $classeControleur = get_class($this);
         $controleur = str_replace("Controleur", "", $classeControleur);
         // Instancie et genere la vue
         $vue = new Vue($this->action, $controleur);
         $vue->generer($donneesVue);
     }
+
 }
