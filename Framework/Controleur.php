@@ -29,6 +29,8 @@ abstract class Controleur
             $this->{$this->action}();
         }
         else {
+            echo "toto";
+            print_r($this);
             $classeControleur = get_class($this);
             throw new Exception("Action '$action' non définie dans la classe '$classeControleur'");
         }

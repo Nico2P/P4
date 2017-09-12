@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd3be23-d6a2-4918-a30e-19b60e3ec73c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config/prod.ini" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.htacces" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Controler/ControlerAccueil.php" afterPath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Controler/ControlerArticle.php" afterPath="$PROJECT_DIR$/Controleur/ControleurArticle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config/dev.ini" afterPath="$PROJECT_DIR$/Config/dev.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/Configuration.php" afterPath="$PROJECT_DIR$/Framework/Configuration.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/Controleur.php" afterPath="$PROJECT_DIR$/Framework/Controleur.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/Routeur.php" afterPath="$PROJECT_DIR$/Framework/Routeur.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framework/Vue.php" afterPath="$PROJECT_DIR$/Framework/Vue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Accueil/index.php" afterPath="$PROJECT_DIR$/Vue/Accueil/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Article/index.php" afterPath="$PROJECT_DIR$/Vue/Article/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Erreur.php" afterPath="$PROJECT_DIR$/Vue/Erreur.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controleur.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controleur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framework/Controleur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="37" />
+            <state relative-caret-position="357">
+              <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -133,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControleurArticle.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ControleurArticle.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controleur/ControleurArticle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+            <state relative-caret-position="225">
+              <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -213,9 +201,9 @@
         <option value="$PROJECT_DIR$/Vue/Accueil/index.php" />
         <option value="$PROJECT_DIR$/Config/prod.ini" />
         <option value="$PROJECT_DIR$/Vue/Article/index.php" />
-        <option value="$PROJECT_DIR$/Framework/Controleur.php" />
         <option value="$PROJECT_DIR$/Config/dev.ini" />
         <option value="$PROJECT_DIR$/Controleur/ControleurArticle.php" />
+        <option value="$PROJECT_DIR$/Framework/Controleur.php" />
       </list>
     </option>
   </component>
@@ -342,12 +330,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502871994625</updated>
-      <workItem from="1502871995984" duration="66665000" />
+      <workItem from="1502871995984" duration="67419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66665000" />
+    <option name="totallyTimeSpent" value="67419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -576,18 +564,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/ControleurArticle.php">
+    <entry file="file://$PROJECT_DIR$/Framework/Controleur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+        <state relative-caret-position="357">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framework/Controleur.php">
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurArticle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="37" />
+        <state relative-caret-position="225">
+          <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
           <folding />
         </state>
       </provider>
