@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3bd3be23-d6a2-4918-a30e-19b60e3ec73c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controleur/ControleurArticle.php" afterPath="$PROJECT_DIR$/Controleur/ControleurArticle.php" />
-    </list>
+    <list default="true" id="3bd3be23-d6a2-4918-a30e-19b60e3ec73c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,16 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Routeur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Framework/Routeur.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Vue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framework/Vue.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,7 +109,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Session.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Framework/Session.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -204,6 +202,7 @@
         <option value="$PROJECT_DIR$/Config/dev.ini" />
         <option value="$PROJECT_DIR$/Framework/Controleur.php" />
         <option value="$PROJECT_DIR$/Controleur/ControleurArticle.php" />
+        <option value="$PROJECT_DIR$/Framework/Session.php" />
       </list>
     </option>
   </component>
@@ -330,12 +329,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502871994625</updated>
-      <workItem from="1502871995984" duration="67872000" />
+      <workItem from="1502871995984" duration="68514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67872000" />
+    <option name="totallyTimeSpent" value="68514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -564,6 +563,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="105" lean-forward="true" selection-start-line="2" selection-start-column="105" selection-end-line="2" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controleur/ControleurArticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -572,10 +579,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
+    <entry file="file://$PROJECT_DIR$/Framework/Session.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="105" lean-forward="true" selection-start-line="2" selection-start-column="105" selection-end-line="2" selection-end-column="105" />
+        <state relative-caret-position="555">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
           <folding />
         </state>
       </provider>
