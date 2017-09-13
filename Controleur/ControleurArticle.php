@@ -29,7 +29,7 @@ class ControleurArticle  extends Controleur {
     }
 
     //ajoute un commentaire à l'article
-    public function commenter($auteur, $contenu, $id_art) {
+    public function commenter() {
         $id_art = $this->requete->getParametre("id");
         $auteur = $this->requete->getParametre("auteur");
         $contenu = $this->requete->getParametre("contenu");
