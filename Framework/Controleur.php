@@ -29,8 +29,6 @@ abstract class Controleur
             $this->{$this->action}();
         }
         else {
-            echo "toto";
-            print_r($this);
             $classeControleur = get_class($this);
             throw new Exception("Action '$action' non définie dans la classe '$classeControleur'");
         }
@@ -50,6 +48,14 @@ abstract class Controleur
         // Instancie et genere la vue
         $vue = new Vue($this->action, $controleur);
         $vue->generer($donneesVue);
+    }
+
+    // redirige vers le controleur et l'action spécifié
+
+    protected function rediriger($controleur, $action = null) {
+        $racineWeb = Configuration::get("racineWeb", "/");
+        // redirection vers l'url racine_site/controleur/action
+        header("Location:" . $racineWeb . $controleur . "/" . $action);
     }
 
 }
