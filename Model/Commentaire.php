@@ -27,7 +27,7 @@ class Commentaire extends Model {
 
     // Retourne le nombres de commentaires
     public function getNombreCommentaires() {
-        $sql = 'select count (*) as nbCommentaires from commentaires';
+        $sql = 'select count(*) as nbCommentaires from commentaires';
         $resultat = $this->executerRequete($sql);
         $ligne = $resultat->fetch();
         return $ligne['nbCommentaires'];

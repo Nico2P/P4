@@ -31,7 +31,7 @@ class ControleurConnexion extends Controleur {
             if ($this->user->connecter($login,$mdp)) {
                 $user = $this->user->getUser($login,$mdp);
                 $this->requete->getSession()->setAttribut("user_id", $user['user_id']);
-                $this->requete->getSession()->setAttribut("user_login", $user['user_login']);
+                $this->requete->getSession()->setAttribut("login", $user['login']);
                 $this->rediriger("admin");
             }
             else

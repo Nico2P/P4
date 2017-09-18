@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nico
- * Date: 15/09/2017
- * Time: 11:18
- */
 
 require_once 'ControleurSecurise.php';
 require_once 'Model/Article.php';

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nico
- * Date: 31/08/2017
- * Time: 15:16
- */
-
 require_once 'Framework/Model.php';
 
 class Article extends Model {
@@ -30,9 +23,10 @@ class Article extends Model {
 
     // Retourne le nombres d'articles
     public function getNombreArticles() {
-        $sql = 'select count (*) as nbArticles from articles';
+        $sql = 'select count(*) as nbArticles from articles';
         $resultat = $this->executerRequete($sql);
         $ligne = $resultat->fetch();
         return $ligne['nbArticles'];
     }
+
 }

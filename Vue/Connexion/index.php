@@ -1,12 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nico
- * Date: 18/09/2017
- * Time: 10:59
- */
-
-$this->titre = "Connexion a l'espace Admin" ?>
+$this->titre = "Espace Admin" ?>
 
 <p>Vous devez être connecté pour accéder à cette zone</p>
 <form action="connexion/connecter" method="post">

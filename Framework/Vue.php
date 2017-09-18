@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nico
- * Date: 31/08/2017
- * Time: 16:06
- */
-
 require_once 'Configuration.php';
 
 class Vue {
