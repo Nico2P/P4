@@ -15,7 +15,7 @@ class ControleurAccueil  extends Controleur {
     private $articles;
 
     public function __construct(){
-        $this->articles = new article();
+        $this->articles = new Article();
     }
 
     // Affiche la listes des billets

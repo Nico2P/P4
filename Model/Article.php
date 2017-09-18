@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 require_once 'Framework/Model.php';
 
 class Article extends Model {
@@ -9,7 +10,7 @@ class Article extends Model {
     /**
      * @return mixed
      */
-    public function getTitle()
+    public function getTitle():?string
     {
         return $this->title;
     }
@@ -18,7 +19,7 @@ class Article extends Model {
      * @param mixed $title
      * @return Article
      */
-    public function setTitle($title)
+    public function setTitle(string $title)
     {
         $this->title = $title;
         return $this;
