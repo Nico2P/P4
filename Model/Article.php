@@ -3,6 +3,29 @@ require_once 'Framework/Model.php';
 
 class Article extends Model {
 
+
+    private $title;
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     * @return Article
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+
+
     // Retourne les articles
     public function getArticles() {
         $sql = 'select * from articles order by id_art ASC';

@@ -10,9 +10,10 @@ $this->titre = "Administration du blog" ?>
 
 <h2>Administration</h2>
 
-Bienvenue, <?= $this->nettoyer($login) ?> !
+<p>Bienvenue, <?= $this->nettoyer($login) ?> !</p>
 
-<a id="deconnexion" href="connexion/deconnecter">Se déconnecter</a>
+<p><a id="deconnexion" href="connexion/deconnecter">Se déconnecter</a></p>
 
-Le blog comporte <?= $this->nettoyer($nbArticles) ?> article(s) et
+Le blog comporte
+<?= $this->nettoyer($nbArticles) ?> article(s) et
 <?= $this->nettoyer($nbCommentaires) ?> commentaire(s).

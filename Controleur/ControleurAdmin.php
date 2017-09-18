@@ -17,10 +17,12 @@ class ControleurAdmin extends ControleurSecurise
 
 
     // Action par défaut
-    public function index() {
+    public function index()
+    {
         $nbArticles = $this->article->getNombreArticles();
         $nbCommentaires = $this->commentaire->getNombreCommentaires();
         $login = $this->requete->getSession()->getAttribut("login");
-        $this->genererVue(array('$nbArticles' => $nbArticles, 'nbCommentaires' => $nbCommentaires, 'login' => $login));
+        $this->genererVue(array('nbArticles' => $nbArticles, 'nbCommentaires' => $nbCommentaires, 'login' => $login));
     }
+
 }
