@@ -27,6 +27,7 @@
 
     </div>
 <footer class="footer">
+    <a id="LienAdmin" href="admin">Espace Admin</a>
     <p>@Nico2P ----- En cours de développement ---- @Nico2P</p>
 </footer>
 </body>

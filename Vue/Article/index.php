@@ -7,6 +7,7 @@
  * Time: 15:23
  */
 
+
 $this->titre = $this->nettoyer($article['titre']); ?>
 
 <article>
