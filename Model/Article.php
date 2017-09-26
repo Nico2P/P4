@@ -5,52 +5,150 @@ require_once 'Framework/Model.php';
 class Article extends Model {
 
 
-    private $title;
+    protected $erreurs = [],
+            $id,
+            $auteur,
+            $titre,
+            $contenu,
+            $dateAjout,
+            $dateModif;
+
+
+    const AUTEUR_INVALIDE = 1;
+    const TITRE_INVALIDE = 2;
+    const CONTENU_INVALIDE = 3;
+
+    public function __construct($valeurs = [])
+    {
+        if (!empty($valeurs))
+        {
+            $this->hydrate($valeurs);
+        }
+    }
+
+    public function hydrate($donnees)
+    {
+        foreach ($donnees as $attribut => $valeur)
+        {
+            $methode = 'set'.ucfirst($attribut);
+
+            if (is_callable([$this, $methode]))
+            {
+                $this->$methode($valeur);
+            }
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function getErreurs(): array
+    {
+        return $this->erreurs;
+    }
+
+    /**
+     * @param array $erreurs
+     */
+    public function setErreurs(array $erreurs)
+    {
+        $this->erreurs = $erreurs;
+    }
 
     /**
      * @return mixed
      */
-    public function getTitle():?string
+    public function getId()
     {
-        return $this->title;
+        return $this->id;
     }
 
     /**
-     * @param mixed $title
-     * @return Article
+     * @param mixed $id
      */
-    public function setTitle(string $title)
+    public function setId($id)
     {
-        $this->title = $title;
-        return $this;
+        $this->id = $id;
     }
 
-
-
-    // Retourne les articles
-    public function getArticles() {
-        $sql = 'select * from articles order by id_art ASC';
-        $articles = $this->executerRequete($sql);
-        return $articles;
+    /**
+     * @return mixed
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
     }
 
-    // Retourne un article en fonction de l'id
-    public function getArticle($id_art) {
-        $sql = 'select id_art as id, date_art as date, titre_art as titre, contenu_art as contenu from articles WHERE id_art=?';
-        $article = $this->executerRequete($sql, array($id_art));
-        if ($article->rowCount() == 1)
-            return $article->fetch();
-        else
-            throw new Exception("Aucun article ne correspond à l'indentifiant '$id_art'");
+    /**
+     * @param mixed $auteur
+     */
+    public function setAuteur($auteur)
+    {
+        $this->auteur = $auteur;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
 
-    // Retourne le nombres d'articles
-    public function getNombreArticles() {
-        $sql = 'select count(*) as nbArticles from articles';
-        $resultat = $this->executerRequete($sql);
-        $ligne = $resultat->fetch();
-        return $ligne['nbArticles'];
+    /**
+     * @param mixed $titre
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContenu()
+    {
+        return $this->contenu;
+    }
+
+    /**
+     * @param mixed $contenu
+     */
+    public function setContenu($contenu)
+    {
+        $this->contenu = $contenu;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
+    }
+
+    /**
+     * @param mixed $dateAjout
+     */
+    public function setDateAjout($dateAjout)
+    {
+        $this->dateAjout = $dateAjout;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateModif()
+    {
+        return $this->dateModif;
+    }
+
+    /**
+     * @param mixed $dateModif
+     */
+    public function setDateModif($dateModif)
+    {
+        $this->dateModif = $dateModif;
     }
 
 }

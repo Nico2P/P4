@@ -7,7 +7,7 @@
  */
 
 require_once 'Framework/Controleur.php';
-require_once 'Model/Article.php';
+require_once 'Model/ArticleManager.php';
 
 
 class ControleurAccueil  extends Controleur {
@@ -15,7 +15,7 @@ class ControleurAccueil  extends Controleur {
     private $articles;
 
     public function __construct(){
-        $this->articles = new Article();
+        $this->articles = new ArticleManager();
     }
 
     // Affiche la listes des billets

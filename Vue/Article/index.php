@@ -33,4 +33,3 @@ $this->titre = $this->nettoyer($article['titre']); ?>
     <input type="submit" value="Commenter"/>
 </form>
 
-

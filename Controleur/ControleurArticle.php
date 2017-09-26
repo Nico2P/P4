@@ -7,7 +7,7 @@
  */
 
 require_once 'Framework/Controleur.php';
-require_once 'Model/Article.php';
+require_once 'Model/ArticleManager.php';
 require_once 'Model/Commentaire.php';
 
 
@@ -17,7 +17,7 @@ class ControleurArticle  extends Controleur {
     private $commentaire;
 
     public function __construct(){
-        $this->article = new Article();
+        $this->article = new ArticleManager();
         $this->commentaire = new Commentaire();
     }
 
@@ -39,4 +39,8 @@ class ControleurArticle  extends Controleur {
         //Exécute l'action par défaut pour actualisé la liste des articles
         $this->executerAction("index");
     }
+
+
+
+
 }

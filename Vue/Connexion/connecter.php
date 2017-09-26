@@ -8,8 +8,6 @@ $this->titre = "Espace Admin" ?>
     <button type="submit">Connexion</button>
 </form>
 
-
-
 <?php if (isset($msgErreur)): ?>
-<p><?=$msgErreur ?> </p>
+    <p><?=$msgErreur ?> </p>
 <?php endif; ?>
