@@ -1,35 +1,118 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nico
- * Date: 31/08/2017
- * Time: 15:40
- */
-
+declare(strict_types=1);
 require_once 'Framework/Model.php';
 
-class Commentaire extends Model {
+class Commentaire extends Model
+{
 
-    //Retourne les commentaires relatif à l'article choisi
-    public function getCommentaire($id_art) {
 
-        $sql = 'select id_com as id, date_com as date, auteur_com as auteur, contenu_com as contenu from commentaires where id_article=?';
-        $commentaires = $this->executerRequete($sql, array($id_art));
-        return $commentaires;
+    protected $erreurs = [],
+        $id,
+        $auteur,
+        $contenu,
+        $dateAjout;
+
+
+    const AUTEUR_INVALIDE = 1;
+    const TITRE_INVALIDE = 2;
+    const CONTENU_INVALIDE = 3;
+
+    public function __construct($valeurs = [])
+    {
+        if (!empty($valeurs)) {
+            $this->hydrate($valeurs);
+        }
     }
 
-    // Ajout un commentaire dans la bdd
-    public function ajouterCommentaire($auteur, $contenu, $id_art) {
-        $sql = 'insert into commentaires(date_com, auteur_com, contenu_com, id_article) values(?, ?, ?, ?)';
-        $date = date(DATE_W3C); // date courante
-        $this->executerRequete($sql, array($date,$auteur,$contenu,$id_art));
+    public function hydrate($donnees)
+    {
+        foreach ($donnees as $attribut => $valeur) {
+            $methode = 'set' . ucfirst($attribut);
+
+            if (is_callable([$this, $methode])) {
+                $this->$methode($valeur);
+            }
+        }
     }
 
-    // Retourne le nombres de commentaires
-    public function getNombreCommentaires() {
-        $sql = 'select count(*) as nbCommentaires from commentaires';
-        $resultat = $this->executerRequete($sql);
-        $ligne = $resultat->fetch();
-        return $ligne['nbCommentaires'];
+    /**
+     * @return array
+     */
+    public function getErreurs(): array
+    {
+        return $this->erreurs;
     }
+
+    /**
+     * @param array $erreurs
+     */
+    public function setErreurs(array $erreurs)
+    {
+        $this->erreurs = $erreurs;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
+    }
+
+    /**
+     * @param mixed $auteur
+     */
+    public function setAuteur($auteur)
+    {
+        $this->auteur = $auteur;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContenu()
+    {
+        return $this->contenu;
+    }
+
+    /**
+     * @param mixed $contenu
+     */
+    public function setContenu($contenu)
+    {
+        $this->contenu = $contenu;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
+    }
+
+    /**
+     * @param mixed $dateAjout
+     */
+    public function setDateAjout($dateAjout)
+    {
+        $this->dateAjout = $dateAjout;
+    }
+
 }

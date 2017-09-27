@@ -8,7 +8,7 @@
 
 require_once 'Framework/Controleur.php';
 require_once 'Model/ArticleManager.php';
-require_once 'Model/Commentaire.php';
+require_once 'Model/CommentaireManager.php';
 
 
 class ControleurArticle  extends Controleur {
@@ -18,7 +18,7 @@ class ControleurArticle  extends Controleur {
 
     public function __construct(){
         $this->article = new ArticleManager();
-        $this->commentaire = new Commentaire();
+        $this->commentaire = new CommentaireManager();
     }
 
     public function index() {
@@ -33,10 +33,14 @@ class ControleurArticle  extends Controleur {
         $id_art = $this->requete->getParametre("id");
         $auteur = $this->requete->getParametre("auteur");
         $contenu = $this->requete->getParametre("contenu");
-
         $this->commentaire->ajouterCommentaire($auteur, $contenu, $id_art);
-
         //Exécute l'action par défaut pour actualisé la liste des articles
+        $this->executerAction("index");
+    }
+
+    public function reported() {
+        $id_com = $this->requete->getParametre("id");
+        $this->commentaire->report_com($id_com);
         $this->executerAction("index");
     }
 

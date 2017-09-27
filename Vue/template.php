@@ -30,5 +30,6 @@
     <a id="LienAdmin" href="admin">Espace Admin</a>
     <p>@Nico2P ----- En cours de développement ---- @Nico2P</p>
 </footer>
+    <script type="text/javascript" src="../public/script.js"></script>
 </body>
 </html>

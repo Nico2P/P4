@@ -2,42 +2,45 @@
 
 require_once 'ControleurSecurise.php';
 require_once 'Model/ArticleManager.php';
-require_once 'Model/Commentaire.php';
+require_once 'Model/CommentaireManager.php';
 
 class ControleurAdmin extends ControleurSecurise
 {
-    private $article;
-    private $commentaire;
+    private $articleManager;
+    private $commentaireManager;
 
     public function __construct()
     {
-        $this->article = new ArticleManager();
-        $this->commentaire = new Commentaire();
+        $this->articleManager = new ArticleManager();
+        $this->commentaireManager = new CommentaireManager();
     }
 
 
     // Action par défaut
     public function index()
     {
-        $nbArticles = $this->article->getNombreArticles();
-        $nbCommentaires = $this->commentaire->getNombreCommentaires();
+        $nbArticles = $this->articleManager->getNombreArticles();
+        $nbCommentaires = $this->commentaireManager->getNombreCommentaires();
         $login = $this->requete->getSession()->getAttribut("login");
-        $listArticles = $this->article->getArticles();
+        $listArticles = $this->articleManager->getArticles();
         $this->genererVue(array('nbArticles' => $nbArticles, 'nbCommentaires' => $nbCommentaires, 'login' => $login, 'articles' => $listArticles));
     }
 
     public function ajouter() {
         $titre = $this->requete->getParametre("titre");
         $contenu = $this->requete->getParametre("contenu");
-        $this->article->ajouterArticle($titre, $contenu);
+        $this->articleManager->ajouterArticle($titre, $contenu);
         $this->executerAction("index");
     }
 
     public function supprimer() {
         $id = $this->requete->getParametre("id");
-        $this->article->supprimerArticle($id);
+        $this->articleManager->supprimerArticle($id);
         $this->executerAction("index");
 
+    }
+
+    public function ajout() {
     }
 
 

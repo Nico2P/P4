@@ -22,8 +22,11 @@ $this->titre = $this->nettoyer($article['titre']); ?>
     <h1 id="commentaireArticle"> Commentaires sur le chapitre : <?= $this->nettoyer($article['titre']) ?></h1>
 </header>
 <?php foreach ($commentaires as $commentaire) : ?>
+
     <p><?= $this->nettoyer($commentaire['auteur']) ?> a dit :</p>
     <p><?= $this->nettoyer($commentaire['contenu']) ?></p>
+    <input type="hidden" name="id" value="<?=$commentaire['id'] ?>" />
+    <p><a href="<?= "article/reported/". $this->nettoyer($commentaire['id'])?>">Signalez commentaire</p></a>
 <?php endforeach; ?>
 
 <form method="post" action="article/commenter">

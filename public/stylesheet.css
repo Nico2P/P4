@@ -1,9 +1,31 @@
+#txtCommentaire {
+    width: 50%;
+}
+
+
+#editeur,
+textarea {
+    width: 700px;
+    height: 200px;
+    border: 1px solid black;
+    padding: 5px;
+    overflow: auto;
+}
+
 .footer {
     border-top: 0px solid #ccc;
     padding-top: 10px;
     text-align: center;
 }
 
-#txtCommentaire {
-    width: 50%;
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+#ajout {
+    margin-top: 30px;
 }
