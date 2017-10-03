@@ -31,9 +31,9 @@ class ArticleManager extends Model
 
     // Ajout un articles dans la bdd
     public function ajouterArticle($titre,$contenu) {
-        $sql = 'insert into articles(titre_art, contenu_art, date_art) values(titre_art,contenu_art, date_art)';
+        $sql = 'insert into articles(titre_art, contenu_art, date_art) values(?,?,?)';
         $date = date(DATE_W3C); // date courante
-        $this->executerRequete($sql, array($date,$titre,$contenu));
+        $this->executerRequete($sql, array($titre,$contenu,$date));
 
     }
 
@@ -44,5 +44,5 @@ class ArticleManager extends Model
 
     public function modifierArticle($id_art) {}
 
-    
+
 }

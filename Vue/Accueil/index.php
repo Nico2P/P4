@@ -17,7 +17,7 @@
             </a>
             <time><?= $this->nettoyer($article['date_art']) ?></time>
         </header>
-        <p><?= $this->nettoyer($article['contenu_art']) ?></p>
+        <p><?= $article['contenu_art'] ?></p>
     </article>
     <hr/>
 <?php endforeach; ?>

@@ -39,9 +39,11 @@ class ControleurArticle  extends Controleur {
     }
 
     public function reported() {
-        $id_com = $this->requete->getParametre("id");
+        $id_com = $this->requete->getParametre("id_com");
+        $id_art = $this->requete->getParametre("id");
         $this->commentaire->report_com($id_com);
         $this->executerAction("index");
+
     }
 
 

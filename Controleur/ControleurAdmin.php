@@ -29,14 +29,15 @@ class ControleurAdmin extends ControleurSecurise
     public function ajouter() {
         $titre = $this->requete->getParametre("titre");
         $contenu = $this->requete->getParametre("contenu");
+        $contenu =
         $this->articleManager->ajouterArticle($titre, $contenu);
-        $this->executerAction("index");
+        $this->rediriger("admin");
     }
 
     public function supprimer() {
         $id = $this->requete->getParametre("id");
         $this->articleManager->supprimerArticle($id);
-        $this->executerAction("index");
+        $this->rediriger("admin");
 
     }
 

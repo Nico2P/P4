@@ -15,7 +15,7 @@ $this->titre = $this->nettoyer($article['titre']); ?>
         <h1 class="titreArticle"><?= $this->nettoyer($article['titre'])?></h1>
         <time><?= $this->nettoyer($article['date']) ?></time>
     </header>
-    <p><?= $this->nettoyer($article['contenu']) ?></p>
+    <p><?= $article['contenu'] ?></p>
 </article>
 <hr />
 <header>
@@ -25,8 +25,14 @@ $this->titre = $this->nettoyer($article['titre']); ?>
 
     <p><?= $this->nettoyer($commentaire['auteur']) ?> a dit :</p>
     <p><?= $this->nettoyer($commentaire['contenu']) ?></p>
-    <input type="hidden" name="id" value="<?=$commentaire['id'] ?>" />
-    <p><a href="<?= "article/reported/". $this->nettoyer($commentaire['id'])?>">Signalez commentaire</p></a>
+    <p><?= $this->nettoyer($commentaire['id']) ?></p>
+
+<form method="post" action="article/reported">
+    <input type="hidden" name="id_com" value="<?=$commentaire['id'] ?>" />
+    <input type="hidden" name="id_art" value="<?=$article['id'] ?>" />
+    <input type="submit" value="Signalez le commentaire" onclick="return(confirm('Commentaire signalez !'));"/>
+
+</form>
 <?php endforeach; ?>
 
 <form method="post" action="article/commenter">
