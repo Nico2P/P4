@@ -29,7 +29,6 @@ class ControleurAdmin extends ControleurSecurise
     public function ajouter() {
         $titre = $this->requete->getParametre("titre");
         $contenu = $this->requete->getParametre("contenu");
-        $contenu =
         $this->articleManager->ajouterArticle($titre, $contenu);
         $this->rediriger("admin");
     }

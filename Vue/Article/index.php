@@ -16,6 +16,7 @@ $this->titre = $this->nettoyer($article['titre']); ?>
         <time><?= $this->nettoyer($article['date']) ?></time>
     </header>
     <p><?= $article['contenu'] ?></p>
+    <p><?= $article['id'] ?></p>
 </article>
 <hr />
 <header>
@@ -28,10 +29,9 @@ $this->titre = $this->nettoyer($article['titre']); ?>
     <p><?= $this->nettoyer($commentaire['id']) ?></p>
 
 <form method="post" action="article/reported">
-    <input type="hidden" name="id_com" value="<?=$commentaire['id'] ?>" />
-    <input type="hidden" name="id_art" value="<?=$article['id'] ?>" />
+    <input name="id_com" type="hidden"  value="<?=$commentaire['id'] ?>" />
+    <input name="id_art" type="hidden"  value="<?=$article['id'] ?>" />
     <input type="submit" value="Signalez le commentaire" onclick="return(confirm('Commentaire signalez !'));"/>
-
 </form>
 <?php endforeach; ?>
 
