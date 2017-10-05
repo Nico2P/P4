@@ -16,7 +16,6 @@ $this->titre = $this->nettoyer($article['titre']); ?>
         <time><?= $this->nettoyer($article['date']) ?></time>
     </header>
     <p><?= $article['contenu'] ?></p>
-    <p><?= $article['id'] ?></p>
 </article>
 <hr />
 <header>
@@ -26,7 +25,6 @@ $this->titre = $this->nettoyer($article['titre']); ?>
 
     <p><?= $this->nettoyer($commentaire['auteur']) ?> a dit :</p>
     <p><?= $this->nettoyer($commentaire['contenu']) ?></p>
-    <p><?= $this->nettoyer($commentaire['id']) ?></p>
 
 <form method="post" action="article/reported">
     <input name="id_com" type="hidden"  value="<?=$commentaire['id'] ?>" />

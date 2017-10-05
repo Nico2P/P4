@@ -15,7 +15,17 @@ Le blog comporte
 <?= $this->nettoyer($nbArticles) ?> article(s) et
 <?= $this->nettoyer($nbCommentaires) ?> commentaire(s).
 
+<p>Les commentaires suivants ont été signalé :</p>
+<?php foreach ($listreport as $comment_report):?>
+<?= $comment_report["contenu"] ?> <br/>
+<?php endforeach; ?>
+
 <hr/>
+
+<p><a id="ajouter" href="admin/ajout">Ajouter un article</a></p>
+
+
+
 
 Liste des articles :
 
@@ -54,4 +64,5 @@ Liste des articles :
     <p><input type="submit" value="Ajouter"/></p>
 </form>
 
-</html>
+
+

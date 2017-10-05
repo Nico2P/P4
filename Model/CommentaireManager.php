@@ -37,4 +37,10 @@ class CommentaireManager extends Model {
         $sql = 'UPDATE commentaires SET reported = TRUE WHERE id_com ='.$id_com;
         $this->executerRequete($sql);
     }
+
+    public function is_report() {
+        $sql = 'select contenu_com as contenu from commentaires WHERE reported=1';
+        $commentaire_reporte = $this->executerRequete($sql);
+        return $commentaire_reporte;
+    }
 }

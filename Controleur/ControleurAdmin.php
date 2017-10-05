@@ -23,7 +23,8 @@ class ControleurAdmin extends ControleurSecurise
         $nbCommentaires = $this->commentaireManager->getNombreCommentaires();
         $login = $this->requete->getSession()->getAttribut("login");
         $listArticles = $this->articleManager->getArticles();
-        $this->genererVue(array('nbArticles' => $nbArticles, 'nbCommentaires' => $nbCommentaires, 'login' => $login, 'articles' => $listArticles));
+        $resultat = $this->commentaireManager->is_report();
+        $this->genererVue(array('nbArticles' => $nbArticles, 'nbCommentaires' => $nbCommentaires, 'login' => $login, 'articles' => $listArticles, 'listreport' => $resultat));
     }
 
     public function ajouter() {
@@ -40,8 +41,23 @@ class ControleurAdmin extends ControleurSecurise
 
     }
 
-    public function ajout() {
+    public function modifier() {
+        $id_art = $this->requete->getParametre("id");
+        $article = $this->articleManager->getArticle($id_art);
+        $this->genererVue(array('article' => $article));
     }
 
+    public function update()
+    {
+        $id_art = $this->requete->getParametre("id");
+        $titre = $this->requete->getParametre("titre");
+        $contenu = $this->requete->getParametre("contenu");
+        $this->articleManager->updateArticle($titre, $contenu, $id_art);
+        $this->rediriger("admin");
+    }
+
+    public function ajout() {
+        $this->genererVue();
+    }
 
 }

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Framework/Model.php';
+require_once 'Model/ArticleManager.php';
 
 class ArticleManager extends Model
 {
@@ -42,7 +43,22 @@ class ArticleManager extends Model
         $this->executerRequete($sql, array($id_art));
     }
 
-    public function modifierArticle($id_art) {}
+    public function modifierArticle($id_art) {
+        $sql = 'SELECT FORM article WHERE id_art = ' .$id_art;
+        $this->executerRequete($sql, array($id_art));
+        if ($article->rowCount() == 1)
+            return $article->fetch();
+        else
+            throw new Exception("Aucun article ne correspond à l'indentifiant '$id_art'");
+    }
 
+    public function updateArticle($titre_art, $contenu_art, $id_art) {
+        $sql ='UPDATE articles SET titre_art = :titre_art, contenu_art = :contenu_art WHERE id_art = :id_art';
+        $this->executerRequete($sql,array(
+            'titre_art' => $titre_art,
+            'contenu_art' => $contenu_art,
+            'id_art' => $id_art
+        ));
+    }
 
 }
