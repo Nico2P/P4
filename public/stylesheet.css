@@ -1,7 +1,17 @@
+#bloc_page {
+    background-color: aqua;
+    margin-top: 100px;
+}
+
+
+.accueil img {
+    height: 100px;
+    width:200px;
+}
+
 #txtCommentaire {
     width: 50%;
 }
-
 
 #editeur,
 textarea {

@@ -28,16 +28,20 @@ class ControleurConnexion extends Controleur {
         if($this->requete->existeParametre("login") && $this->requete->existeParametre("mdp")) {
             $login = $this->requete->getParametre("login");
             $mdp = $this->requete->getParametre("mdp");
-            if ($this->user->connecter($login,$mdp)) {
-                $user = $this->user->getUser($login,$mdp);
+            if ($this->user->connecter($login)) {
+                $user = $this->user->getUser($login);
+                $userhash = $user['user_mdp'];
+                if (password_verify($mdp,$userhash)){
                 $this->requete->getSession()->setAttribut("user_id", $user['user_id']);
                 $this->requete->getSession()->setAttribut("login", $user['login']);
                 $this->rediriger("admin");
-            } else
-                $this->genererVue(array('msgErreur' => 'login ou mot de passe incorrects'), "index");
-        }
-        else
+                }
+            } else {
+                $this->executerAction("index");
+            }
+        } else {
             throw new Exception("Action impossible : login ou mot de passe non defini");
+        }
     }
 
     public function  deconnecter() {

@@ -43,4 +43,9 @@ class CommentaireManager extends Model {
         $commentaire_reporte = $this->executerRequete($sql);
         return $commentaire_reporte;
     }
+
+    public function supprimer_commentaire($id_art) {
+        $sql = 'DELETE FROM commentaires WHERE id_article = '. $id_art;
+        $this->executerRequete($sql, array($id_art));
+    }
 }

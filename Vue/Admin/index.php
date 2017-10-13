@@ -1,10 +1,7 @@
 <?php
 $this->titre = "Administration du blog" ?>
 
-<head>
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nkqmdbzathgp9tbu7benyljho91qgfkpgjdf0c34f2a0rrrz"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
-</head>
+
 <h2>Administration</h2>
 
 <p>Bienvenue, <?= $this->nettoyer($login) ?> !</p>
@@ -23,7 +20,7 @@ Le blog comporte
 <hr/>
 
 <p><a id="ajouter" href="admin/ajout">Ajouter un article</a></p>
-
+<p><a id="addUser" href="admin/newUser">Ajouter un utilisateur</a></p>
 
 
 
@@ -35,6 +32,7 @@ Liste des articles :
         <th>Titre</th>
         <th>Contenu</th>
         <th>Action</th>
+        <th>Commentaires signalez ?</th>
     </tr>
     <tr>
 
@@ -56,13 +54,6 @@ Liste des articles :
 
 </table>
 
-<form method="post" action="admin/ajouter">
-    <div id="editeur">
-        <input id="titreArt" name="titre" type="text" placeholder="Titre de l'article" required/><br/>
-        <textarea id="txtArticle" name="contenu" placeholder=""></textarea>
-    </div>
-    <p><input type="submit" value="Ajouter"/></p>
-</form>
 
 
 

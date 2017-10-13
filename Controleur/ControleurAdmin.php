@@ -3,16 +3,19 @@
 require_once 'ControleurSecurise.php';
 require_once 'Model/ArticleManager.php';
 require_once 'Model/CommentaireManager.php';
+require_once 'Model/Utilisateur.php';
 
 class ControleurAdmin extends ControleurSecurise
 {
     private $articleManager;
     private $commentaireManager;
+    private $utilisateur;
 
     public function __construct()
     {
         $this->articleManager = new ArticleManager();
         $this->commentaireManager = new CommentaireManager();
+        $this->utilisateur = new Utilisateur();
     }
 
 
@@ -37,6 +40,7 @@ class ControleurAdmin extends ControleurSecurise
     public function supprimer() {
         $id = $this->requete->getParametre("id");
         $this->articleManager->supprimerArticle($id);
+        $this->commentaireManager->supprimer_commentaire($id);
         $this->rediriger("admin");
 
     }
@@ -58,6 +62,18 @@ class ControleurAdmin extends ControleurSecurise
 
     public function ajout() {
         $this->genererVue();
+    }
+
+    public function newUser() {
+        $this->genererVue();
+    }
+
+    public function addUser() {
+        $pseudo = $this->requete->getParametre("pseudo");
+        $mdp = $this->requete->getParametre("mdp");
+        $mdphash = password_hash($mdp, PASSWORD_DEFAULT);
+        $this->utilisateur->addUser($pseudo,$mdphash);
+        $this->rediriger("admin");
     }
 
 }
