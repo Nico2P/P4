@@ -11,11 +11,35 @@ $this->titre = "Administration du blog" ?>
 Le blog comporte
 <?= $this->nettoyer($nbArticles) ?> article(s) et
 <?= $this->nettoyer($nbCommentaires) ?> commentaire(s).
+<br/>
 
-<p>Les commentaires suivants ont été signalé :</p>
-<?php foreach ($listreport as $comment_report):?>
-<?= $comment_report["contenu"] ?> <br/>
-<?php endforeach; ?>
+<h2>Moderation des commentaires :</h2>
+<br/>
+
+<table>
+    <tr>
+        <th>auteur</th>
+        <th>contenu</th>
+        <th>Action</th>
+    </tr>
+    <?php foreach ($listreport as $comment_report):?>
+        <tr>
+            <td><?= $comment_report["auteur"] ?></td>
+            <td><?= $comment_report["contenu"] ?></td>
+            <td>
+                <form method="post" action="admin/suppCommentaire">
+                    <input name="id" type="hidden"  value="<?=$comment_report["id"]?>" />
+                    <input type="submit" value="Supprimer" onclick="return(confirm('Voulez vous supprimé le commentaire ?'));"/>
+                </form>
+                <form method="post" action="admin/notReport">
+                    <input name="id" type="hidden"  value="<?=$comment_report["id"]?>" />
+                    <input type="submit" value="Validez" onclick="return(confirm('Voulez vous ne plus signalez le commentaire ?'));"/>
+                </form>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+
+</table>
 
 <hr/>
 
@@ -24,7 +48,7 @@ Le blog comporte
 
 
 
-Liste des articles :
+<h2>Liste des articles :</h2>
 
 <table>
     <tr>
@@ -32,12 +56,7 @@ Liste des articles :
         <th>Titre</th>
         <th>Contenu</th>
         <th>Action</th>
-        <th>Commentaires signalez ?</th>
     </tr>
-    <tr>
-
-    </tr>
-
 
 
 <?php foreach ($articles as $article):?>
@@ -53,6 +72,9 @@ Liste des articles :
 <?php endforeach; ?>
 
 </table>
+
+
+
 
 
 

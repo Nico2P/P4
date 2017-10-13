@@ -43,7 +43,6 @@ class ControleurArticle  extends Controleur {
         $id_art = $this->requete->getParametre("id_art");
         $this->commentaire->report_com($id_com);
         $this->rediriger("article" . '/' . $id_art);
-
     }
 
 

@@ -13,7 +13,7 @@ $this->titre = $this->nettoyer($article['titre']); ?>
 <article>
     <header>
         <h1 class="titreArticle"><?= $this->nettoyer($article['titre'])?></h1>
-        <time><?= $this->nettoyer($article['date']) ?></time>
+        <time><?= substr($this->nettoyer($article['date']), 5, 20) ?></time>
     </header>
     <p><?= $article['contenu'] ?></p>
 </article>

@@ -39,13 +39,18 @@ class CommentaireManager extends Model {
     }
 
     public function is_report() {
-        $sql = 'select contenu_com as contenu from commentaires WHERE reported=1';
+        $sql = 'select auteur_com as auteur, contenu_com as contenu, id_com as id from commentaires WHERE reported=1';
         $commentaire_reporte = $this->executerRequete($sql);
         return $commentaire_reporte;
     }
 
-    public function supprimer_commentaire($id_art) {
-        $sql = 'DELETE FROM commentaires WHERE id_article = '. $id_art;
-        $this->executerRequete($sql, array($id_art));
+    public function supprimer_commentaire($id) {
+        $sql = 'DELETE FROM commentaires WHERE id_com = '. $id;
+        $this->executerRequete($sql, array($id));
+    }
+
+    public function isValid($id) {
+        $sql = 'UPDATE commentaires SET reported = FALSE WHERE id_com ='.$id;
+        $this->executerRequete($sql);
     }
 }

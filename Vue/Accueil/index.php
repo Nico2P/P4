@@ -24,7 +24,7 @@
                         <a href="<?= "article/index/" . $this->nettoyer($article['id_art']) ?>">
                             <h1 class="titreArticle"><?= $this->nettoyer($article['titre_art']) ?></h1>
                         </a>
-                        <time><?= $this->nettoyer($article['date_art']) ?></time>
+                        <time><?= substr($this->nettoyer($article['date_art']), 5, 20) ?></time>
                     </header>
                     <p><?= substr($article['contenu_art'],0 , 500) ?></p>
                 </article>

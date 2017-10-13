@@ -60,6 +60,18 @@ class ControleurAdmin extends ControleurSecurise
         $this->rediriger("admin");
     }
 
+    public function suppCommentaire() {
+        $id = $this->requete->getParametre("id");
+        $this->commentaireManager->supprimer_commentaire($id);
+        $this->rediriger("admin");
+    }
+
+    public function notReport() {
+            $id_com = $this->requete->getParametre("id");
+            $this->commentaireManager->isValid($id_com);
+            $this->rediriger("admin");
+    }
+
     public function ajout() {
         $this->genererVue();
     }
