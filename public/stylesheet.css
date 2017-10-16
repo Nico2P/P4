@@ -1,10 +1,36 @@
 #bloc_page {
-    background-color: aqua;
-    margin-top: 100px;
+    background-color: white;
+    margin-top: 30px;
 }
 
+#acceuil {
+    margin-left: 50px;
+    height: 40%;
+    width:90%;
+    background-image: url(../../public/accueil.jpg);
+}
 
-.accueil img {
+#navigation {
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+
+a.top {
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+    opacity: 0.5;
+    color: black;
+    height: 60px;
+}
+
+#adminlogo img{
+    margin-left: 5px;
+    height: 15px;
+    width: 15px;
+}
+
+.index img {
     height: 100px;
     width:200px;
 }
@@ -15,11 +41,27 @@
 
 #editeur,
 textarea {
-    width: 700px;
+    min-height: 600px;
     border: 1px solid black;
     padding: 15px;
     overflow:auto;
 }
+
+#bloc_edit {
+    margin-left: 100px;
+}
+
+#ajouter {
+    margin-left: 10%;
+    width: 100%;
+    background-color: #0085A1;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 .footer {
     border-top: 0px solid #ccc;
@@ -35,6 +77,67 @@ td, th {
     border: 1px solid black;
 }
 
+.table td, .table th {
+    border-top: 1px solid #030404 !important;
+}
+
+.lgn-tab {
+    height: 100px;
+}
+
+.lgn-tab img {
+    display: none;
+}
+
+.id_art {
+    width: 100px;
+}
+
+.titre_art {
+    width: 160px;
+}
+
+.ctn-art {
+    width: 500px;
+}
 #ajout {
     margin-top: 30px;
+}
+
+
+#inputName {
+    width: 250px;
+    margin-left: 38%;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+#inputPassword {
+    width: 250px;
+    margin-left: 38%;
+    margin-bottom: 30px;
+}
+
+#connexion {
+    width: 300px;
+    margin-left: 36%;
+}
+
+.securearea-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.admin {
+    padding-top: 100px;
+    background-color: lightgrey;
+    height: 600px;
+}
+
+#infoblog {
+    text-align: center;
+}
+
+#login_destroy {
+    text-align: right;
 }

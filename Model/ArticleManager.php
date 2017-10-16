@@ -53,11 +53,13 @@ class ArticleManager extends Model
     }
 
     public function updateArticle($titre_art, $contenu_art, $id_art) {
-        $sql ='UPDATE articles SET titre_art = :titre_art, contenu_art = :contenu_art WHERE id_art = :id_art';
+        $sql ='UPDATE articles SET titre_art = :titre_art, contenu_art = :contenu_art , date_art = :date_art WHERE id_art = :id_art';
+        $date = date(DATE_RSS); // date courante
         $this->executerRequete($sql,array(
             'titre_art' => $titre_art,
             'contenu_art' => $contenu_art,
-            'id_art' => $id_art
+            'id_art' => $id_art,
+            'date_art' => $date
         ));
     }
 

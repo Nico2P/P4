@@ -59,13 +59,7 @@ class Commentaire extends Model
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
+
 
     /**
      * @return mixed

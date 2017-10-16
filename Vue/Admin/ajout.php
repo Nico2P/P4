@@ -13,18 +13,21 @@ $this->titre = "Administration du blog" ?>
             toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         });</script>
 </head>
-<h2>Administration</h2>
+<h2 class="securearea-title">Administration</h2>
 
-<p><a id="deconnexion" href="connexion/deconnecter">Se déconnecter</a></p>
+<div id="login_destroy">
+    <p><a id="deconnexion" href="connexion/deconnecter">Se déconnecter</a></p>
+</div>
 
 
 
-<h2> Ajout d'un article</h2>
-
-<form method="post" action="admin/ajouter">
+<h2 class="securearea-title"> Ajout d'un article</h2>
+<div id="bloc_edit" class="col-md-10">
+<form method="post" action="admin/ajouter" class="securearea-title">
     <div id="editeur">
         <input id="titreArt" name="titre" type="text" placeholder="Titre de l'article" required/><br/>
         <textarea id="txtArticle" name="contenu" placeholder=""></textarea>
     </div>
-    <p><input type="submit" value="Ajouter"/></p>
+    <p><input id="ajouter" type="submit" value="Ajouter"/></p>
 </form>
+</div>
