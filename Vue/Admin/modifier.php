@@ -25,8 +25,8 @@ $this->titre = "Administration du blog" ?>
     <div id="editeur">
         <input type="hidden" name="id" value="<?=$article['id'] ?>" />
         <input id="titreArt" name="titre" type="text" value="<?= $this->nettoyer($article['titre'])?>" required/><br/>
-        <textarea id="txtArticle" name="contenu" placeholder=""><?= $this->nettoyer($article['contenu']) ?></textarea>
+        <textarea id="txtArticle" class="txt_zone_admin" name="contenu" placeholder=""><?= $this->nettoyer($article['contenu']) ?></textarea>
     </div>
-    <p><input type="submit" value="Modifier"/></p>
+    <p><input class="ajouter" type="submit" value="Modifier"/></p>
 </form>
 

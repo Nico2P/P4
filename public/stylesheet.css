@@ -15,12 +15,20 @@
     border-bottom: 1px solid black;
 }
 
+a {
+    color: #0085A1;
+}
+
+#acceuil a {
+    color: white !important;
+}
+
 a.top {
     position: fixed;
     right: 0px;
     bottom: 20px;
     opacity: 0.5;
-    color: black;
+    color: #0085A1;
     height: 60px;
 }
 
@@ -31,16 +39,15 @@ a.top {
 }
 
 .index img {
-    height: 100px;
-    width:200px;
+    display: none;
 }
 
 #txtCommentaire {
     width: 50%;
+    height: 300px !important;
 }
 
-#editeur,
-textarea {
+.txt_zone_admin {
     min-height: 600px;
     border: 1px solid black;
     padding: 15px;
@@ -51,8 +58,15 @@ textarea {
     margin-left: 100px;
 }
 
-#ajouter {
-    margin-left: 10%;
+
+#blog_admin {
+    background-color: lightgrey;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.ajouter {
     width: 100%;
     background-color: #0085A1;
     border: none;
@@ -60,6 +74,17 @@ textarea {
     padding: 16px 32px;
     text-decoration: none;
     cursor: pointer;
+    margin-top: 30px;
+}
+
+#btn_ajout {
+    text-align: center;
+}
+
+#titreArt {
+    margin-bottom: 15px;
+    width: 300px;
+    text-align: center;
 }
 
 
@@ -99,6 +124,10 @@ td, th {
 
 .ctn-art {
     width: 500px;
+}
+
+.contenu_art {
+    width: 340px;
 }
 #ajout {
     margin-top: 30px;
@@ -140,4 +169,13 @@ td, th {
 
 #login_destroy {
     text-align: right;
+}
+
+.btn-info {
+    background-color: #0085A1 !important;
+    border-color: #0085A1 !important;
+}
+
+#auteur {
+    margin: 10px 0px 10px 0px;
 }

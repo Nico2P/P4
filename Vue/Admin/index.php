@@ -1,7 +1,7 @@
 <?php
 $this->titre = "Administration du blog" ?>
 
-
+    <div id="blog_admin">
     <h2 class="securearea-title">Administration</h2>
 
     <div id="login_destroy">
@@ -16,35 +16,43 @@ $this->titre = "Administration du blog" ?>
     </div>
     <br/>
 
+    <div id="btn_ajout">
     <a href="<?= "admin/ajout"?>" class="btn btn-info btn-lg">
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Ajouter un article
     </a>
+    </div>
 
     <h2 class="securearea-title">Moderation des commentaires :</h2>
     <br/>
     <div class="table-responsive">
         <table class="table table-striped" id="tabcommentaires">
             <tr>
-                <th>auteur</th>
-                <th>contenu</th>
+                <th>Auteur</th>
+                <th>Contenu</th>
                 <th>Action</th>
             </tr>
-            <?php foreach ($listreport as $comment_report):?>
-            <tr>
-                <td><?= $comment_report["auteur"] ?></td>
-                <td><?= $comment_report["contenu"] ?></td>
-                <td>
-                    <form method="post" action="admin/suppCommentaire">
-                        <input name="id" type="hidden"  value="<?=$comment_report["id"]?>" />
-                        <input type="submit" value="Supprimer" onclick="return(confirm('Voulez vous supprimé le commentaire ?'));"/>
-                    </form>
-                    <form method="post" action="admin/notReport">
-                        <input name="id" type="hidden"  value="<?=$comment_report["id"]?>" />
-                        <input type="submit" value="Validez" onclick="return(confirm('Voulez vous ne plus signalez le commentaire ?'));"/>
-                    </form>
-                </td>
-            </tr>
-            <?php endforeach; ?>
+            <?php if (!empty($listreport)): ?>
+                <?php foreach ($listreport as $comment_report):?>
+                    <tr>
+                        <td><?= $comment_report["auteur"] ?></td>
+                        <td><?= $comment_report["contenu"] ?></td>
+                        <td>
+                            <form method="post" action="admin/suppCommentaire">
+                                <input name="id" type="hidden"  value="<?=$comment_report["id"]?>" />
+                                <input type="submit" value="Supprimer" onclick="return(confirm('Voulez vous supprimé le commentaire ?'));"/>
+                            </form>
+                            <form method="post" action="admin/notReport">
+                                <input name="id" type="hidden"  value="<?=$comment_report["id"]?>" />
+                                <input type="submit" value="Validez" onclick="return(confirm('Voulez vous ne plus signalez le commentaire ?'));"/>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                <?php else:?>
+                <tr>
+                    <p>Aucun Commentaire signalez</p>
+                </tr>
+                <?php endif; ?>
         </table>
     </div>
 
@@ -54,10 +62,10 @@ $this->titre = "Administration du blog" ?>
     <div class="table-responsive">
     <table id="tabadmin" class="table table-striped">
         <tr>
-            <th>Id Article</th>
+            <th>ID</th>
             <th>Titre</th>
             <th>Contenu</th>
-            <th>Action</th>
+            <th class="contenu_art">Action</th>
         </tr>
         <?php foreach ($articles as $article):?>
         <tr class="lgn-tab">
@@ -80,6 +88,7 @@ $this->titre = "Administration du blog" ?>
 
     <p>Fonction supplementaire :</p>
     <p><a id="addUser" href="admin/newUser">Ajouter un utilisateur</a></p>
+    </div>
 
 
 

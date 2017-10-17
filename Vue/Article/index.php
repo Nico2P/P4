@@ -19,7 +19,7 @@ $this->titre = $this->nettoyer($article['titre']); ?>
 </article>
 <hr />
 <header>
-    <h1 id="commentaireArticle"> Commentaires sur le chapitre : <?= $this->nettoyer($article['titre']) ?></h1>
+    <h1 id="commentaireArticle"> Commentaires sur : <?= $this->nettoyer($article['titre']) ?></h1>
 </header>
 <?php foreach ($commentaires as $commentaire) : ?>
 
@@ -29,14 +29,16 @@ $this->titre = $this->nettoyer($article['titre']); ?>
 <form method="post" action="article/reported">
     <input name="id_com" type="hidden"  value="<?=$commentaire['id'] ?>" />
     <input name="id_art" type="hidden"  value="<?=$article['id'] ?>" />
-    <input type="submit" value="Signalez le commentaire" onclick="return(confirm('Commentaire signalez !'));"/>
+    <input type="submit"  class="btn btn-info btn-lg" value="Signalez le commentaire" onclick="return(confirm('Commentaire signalez !'));"/>
 </form>
 <?php endforeach; ?>
+
+<hr />
 
 <form method="post" action="article/commenter">
     <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" required/><br/>
     <textarea id="txtCommentaire" name="contenu" rows="4" placeholder="Votre commentaire" required></textarea><br/>
     <input type="hidden" name="id" value="<?=$article['id'] ?>" />
-    <input type="submit" value="Commenter"/>
+    <input type="submit" class="btn btn-info btn-lg" value="Commenter"/>
 </form>
 

@@ -25,9 +25,9 @@ $this->titre = "Administration du blog" ?>
 <div id="bloc_edit" class="col-md-10">
 <form method="post" action="admin/ajouter" class="securearea-title">
     <div id="editeur">
-        <input id="titreArt" name="titre" type="text" placeholder="Titre de l'article" required/><br/>
-        <textarea id="txtArticle" name="contenu" placeholder=""></textarea>
+        <input id="titreArt"  name="titre" type="text" placeholder="Titre de l'article" required/><br/>
+        <textarea id="txtArticle" class="txt_zone_admin" name="contenu" placeholder=""></textarea>
     </div>
-    <p><input id="ajouter" type="submit" value="Ajouter"/></p>
+    <p><input class="ajouter" type="submit" value="Ajouter"/></p>
 </form>
 </div>
